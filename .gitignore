@@ -3,6 +3,7 @@ outputs/
 __pycache__/
 .tf_checkpoints/
 augmented/
+training_images/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
