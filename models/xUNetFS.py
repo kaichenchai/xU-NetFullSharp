@@ -15,7 +15,7 @@ np.random.seed = seed
 tf.seed = seed
 
 # Image size
-SIZE = 512
+SIZE = 1024
 INPUT_SHAPE = (SIZE, SIZE, 1)
 OUTPUT_CHANNELS = 1
 

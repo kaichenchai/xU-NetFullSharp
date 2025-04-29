@@ -10,7 +10,7 @@ from tensorflow.keras.utils import img_to_array
 seed = 2019
 np.random.seed = seed
 
-IMAGE_SIZE = 512
+IMAGE_SIZE = 1024
 BATCH_SIZE = 10
 
 def preprocess_image(image):
