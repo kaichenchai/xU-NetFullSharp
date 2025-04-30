@@ -24,8 +24,9 @@ import numpy as np
 seed = 2019
 np.random.seed = seed
 
+
 # Image size
-SIZE = 512
+SIZE = 1024
 INPUT_SHAPE = (SIZE, SIZE, 1)
 BATCH_SIZE = 5
 
