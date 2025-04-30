@@ -216,7 +216,7 @@ def get_unseen_data(t_path, random=False, RGB=False):
             if (img.shape != (SIZE, SIZE, 1)):
                 img = cv.resize(img, (SIZE, SIZE), interpolation=cv.INTER_LANCZOS4)
         
-        img = preprocess_image(img)
+        #img = preprocess_image(img)  # random image colour inversion
         img = img_to_array(img)
         # Convert to 0--1 interval  
         img /= 255.0
