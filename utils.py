@@ -253,11 +253,11 @@ def test_model(model, t_path, RGB=False, random=False):
 
     return results, ids
 
-def eval_results(results, ids, model_name):
-    os.makedirs(os.path.join("outputs", "external", model_name), exist_ok=True)
+def eval_results(results, ids, model_name, output_dir):
+    os.makedirs(output_dir, exist_ok=True)
     
     for i in tqdm(range(0, len(results)), desc='Saving predictions'):
-        cv.imwrite(os.path.join("outputs", "external", model_name, f"{ids[i].split('.')[0]}_predicted.png"), results[i]*255)
+        cv.imwrite(os.path.join(output_dir, f"{ids[i].split('.')[0]}.png"), results[i]*255)
 
 def eval_test_results(model, model_name, t_path, RGB=False):
     test_gen, test_ids = get_test_data(t_path, RGB=RGB)

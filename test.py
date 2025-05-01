@@ -83,7 +83,8 @@ def main(args):
             eval_results(result, ids, model_name)
         else:
             result, ids = test_model(model, path, RGB=False)
-            eval_results(result, ids, model_name)
+            output_dir = args.output_dir
+            eval_results(result, ids, model_name, output_dir)
     else:
         raise ValueError(f"Test variant {args.test_variant} is not recognized.")
 
@@ -92,6 +93,6 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", type=str, required=True, help="Name of the model to use.", choices=list(weights_mapping.keys()))
     parser.add_argument("--data_path", type=str, required=True, help="Path to test images.")
     parser.add_argument("--test_variant", type=str, choices=["internal", "external"], required=False, default="external", help="Variant of the test set to use: 'internal', 'external'. The INTERNAL test path directory should contain 'JSRT' and 'BSE_JSRT' subdirectories. JSRT contains the original images and BSE_JSRT contains the corresponding ground truth images. The EXTERNAL path directory should contain just the test images.")
-
+    parser.add_argument("--output_dir", type=str, required=True, help="directory to save images in")
     args = parser.parse_args()
     main(args)
